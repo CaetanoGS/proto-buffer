@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "protocolbuffers"
+version = "0.1.0"
+description = "Server Client Application to test protocol buffers with sockets"
+authors = ["Gustavo"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+protobuf = "^4.22.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
