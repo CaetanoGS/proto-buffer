@@ -1,3 +1,5 @@
+## Problem
+
 A client application connects to your application via a TCP socket and sends an arbitrary
 number of protobuf-encoded, length-prefixed messages. Every message block consists of
 an unsigned long (C type) denoting the length in bytes of the following serialized protobuf
@@ -36,3 +38,23 @@ lm.message = 'test message'
 payload = lm.SerializeToString()
 sock.sendall(struct.pack('>L', len(payload)) + payload)
 ```
+
+## How to run the solution
+
+To make easier the dependencies management, poetry was add to the project, and to run the project provinding all the required dependencies, you have to run the following sequency of commands:
+
+```
+poetry shell # It activates the virtual env
+poetry install --no-root # It install the dependencies in the venv
+```
+
+No you should be able to run the client and the server with the following command:
+
+```
+python <file_name>.py
+```
+
+## Notes
+
+
+
