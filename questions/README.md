@@ -73,5 +73,26 @@ The authentication methods are handled by the legacy backend, however nowadays a
 
 ## 6. Suppose you need to continuously roll out an application to several stations in multiple remote locations in different time zones and sometimes unstable/slow internet connections. Service continuity and stability are paramount. Each on-site location has a central server available. How would you make sure that you can roll out updated versions of the application in a timely fashion while interrupting the service as shortly as possible?
 
+### 1- Use Jenkins to push the release image to the Registry
+
+I'd use Jenkins to create the pipeline, and the pipeline would be something like:
+
+CLONE BRANCH VERSION >> Build Test Img >> Run the tests >> Build Release Image >> Publish new image to Registry 
+
+As soon as the Release image is available in our Registry
+
+### 2 - Use Ansible to automate the deployment
+
+Use Ansible to automate the deployment with playbooks consuming the images from the Registry. We can use the --scheduled command to manage when the deployment will happen.
+
+### 3 - Do the deployment during the low traffic hours
+
+Select the low traffic time to update the station, since there are different timezone, it would be nice to find a middle term to update those stations.
+
+### 4 - Use Content Deliver Network (CDN)
+
+Use CDN to cache the data in multiple locations, and it will reduce the amount of data that will be shared over the internet. It can help regarding the unstable internet.
+
+
 ## 7. How do you optimize queries in a relational database, such as PostgreSQL or MySQL? Can you discuss techniques such as indexing, query planning, or query optimization?
 
