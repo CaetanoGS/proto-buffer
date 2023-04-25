@@ -78,9 +78,9 @@ To run the provided solution, there are to requirements, these requirements are:
 
 ## Explained dependencies
 
-protobuf ^4.22.3 --> Enables Protocol Buffers
-tqdm = "^4.65.0" --> Used to have a load bar to follow the progress
-black ^23.3.0 --> Used to format the python files
+* protobuf ^4.22.3 --> Enables Protocol Buffers
+* tqdm = "^4.65.0" --> Used to have a load bar to follow the progress
+* black ^23.3.0 --> Used to format the python files
 
 
 ## How to run the solution
